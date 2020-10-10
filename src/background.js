@@ -19,6 +19,7 @@ export default function loadBackground() {
     }
 
     var canvas = document.querySelector("canvas");
+    var body = document.querySelector("body");
 
     if (!canvas || !canvas.getContext) {
         return false;
@@ -207,8 +208,8 @@ export default function loadBackground() {
         requestAnimationFrame(animateDots);
     }
 
-    canvas.addEventListener("mousemove", doSomeThing);
-    canvas.addEventListener("mouseleave", doSomeThing);
+    body.addEventListener("mousemove", doSomeThing);
+    body.addEventListener("mouseleave", doSomeThing);
     function doSomeThing(e) {
         if (e.type == "mousemove") {
             connectArea.x = e.pageX;

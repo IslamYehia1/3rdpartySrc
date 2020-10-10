@@ -1,0 +1,267 @@
+@import "./style.scss";
+@media only screen and (max-width: 992px) {
+    #thirdPage {
+        .wrapper {
+            height: 50vh !important ;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    #thirdPage {
+        .wrapper {
+            height: 35vh !important ;
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #thirdPage {
+        .wrapper {
+            height: 25vh !important ;
+        }
+        #ourValues {
+            font-size: 3em !important ;
+        }
+    }
+}
+
+#thirdPage {
+    height: 500vh;
+    background-color: #121217;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .wrapper {
+        margin-bottom: 150px;
+        width: 100%;
+        height: 80vh;
+        display: block;
+        overflow: hidden;
+        background-color: #0c0910;
+        position: relative;
+    }
+    .picsWrapper {
+        position: absolute;
+
+        transform: rotate(25deg) translate(-30%, -22%) !important;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .row {
+            display: flex;
+            .pic {
+                min-width: 33%;
+                padding-bottom: 18.9%;
+                margin: 2%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: 50%;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .clients {
+        padding: 0 150px;
+        height: 130vh;
+        margin-top: 10%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 15% 85%;
+        grid-template-areas:
+            "title title title title title"
+            "preview preview listOfClients listOfClients listOfClients";
+        h1 {
+            grid-area: title;
+            font-family: "3rdpartyBold";
+            height: 50%;
+            font-size: 6em;
+            color: white;
+            margin: 0;
+        }
+        .clientsList {
+            grid-area: listOfClients;
+            height: 100%;
+
+            .list {
+                display: grid;
+                margin-left: 10%;
+                .clientName {
+                    position: relative;
+                    height: 120px;
+                    margin: 10px 0;
+                    width: 60%;
+                    &:hover {
+                        .inner {
+                            height: 100%;
+                        }
+                    }
+                }
+                .outer {
+                    max-width: 100%;
+                    vertical-align: text-top;
+                    height: 100%;
+                    position: absolute;
+                    margin: 30px 0;
+                    -webkit-text-stroke: 2px black;
+                    color: transparent;
+                    font-family: "3rdparty";
+                    font-size: 6em;
+                }
+                .inner {
+                    -webkit-text-stroke: none;
+                    color: black;
+                    height: 0%;
+                    overflow: hidden;
+                    transition: all 0.5s ease;
+                }
+                button {
+                    width: 30%;
+                    margin-top: 10%;
+                    border-radius: 100rem;
+                    justify-self: self-start;
+                    padding: 20px 40px;
+                    background-color: black;
+                    color: white;
+                    border: none;
+                }
+            }
+        }
+        .clientPreview {
+            grid-area: preview;
+            overflow: hidden;
+            border: 1px white;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+                0 3px 6px rgba(0, 0, 0, 0.23);
+            margin-top: 1%;
+            height: 70%;
+            width: 95%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            #first {
+                translate: 100px 100px;
+            }
+        }
+    }
+}
+.firstSection {
+    // The picture of the client and the work done displayed in a column
+
+    display: flex;
+    flex-direction: column;
+    width: 76%;
+    height: 102%;
+    .item {
+        background-image: url("../assets/img/clients/image0.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+    }
+    .firstItem {
+        background-image: url("../assets/img/clients/image0.jpg") !important ;
+    }
+    .secondItem {
+        background-image: url("../assets/img/colors1.jpg") !important ;
+    }
+    .thirdItem {
+        background-image: url("../assets/img/colors2.jpg") !important ;
+    }
+    .bottomText {
+        display: flex;
+        h1 {
+            margin-right: 20px;
+        }
+        h5 {
+            height: 30px;
+            line-height: 40px;
+            text-align: center;
+        }
+    }
+}
+.ourWork {
+    .title {
+        color: white;
+        font-family: "3rdpartyBold";
+        margin-left: 150px;
+        font-size: 8em;
+    }
+}
+
+.showCase {
+    color: white;
+    font-family: "3rdparty";
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    margin-bottom: 100px;
+    justify-content: flex-end;
+    padding: 150px 180px 0px 220px;
+    box-sizing: border-box;
+    position: relative;
+    .leftText {
+        height: 100%;
+        width: 5%;
+        position: relative;
+
+        h5 {
+            -webkit-transform: rotate(-90deg);
+            -moz-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+            position: absolute;
+            right: 0;
+            bottom: 30%;
+            left: -50px;
+            width: 200px;
+            height: 10px;
+        }
+    }
+}
+.leftClient {
+    justify-content: flex-start !important;
+}
+
+@media only screen and (max-width: 1280px) {
+    .leftText {
+        position: absolute;
+        right: 0;
+        bottom: 30%;
+        left: -50px;
+    }
+    .showCase {
+        padding: 150px 90px 0px 120px;
+
+        .firstSection {
+            width: 95%;
+        }
+    }
+}
+@media only screen and (max-width: 500px) {
+    .ourWork .title {
+        font-size: 4em;
+        margin: 20px;
+    }
+    .leftText {
+        position: absolute;
+        right: 0;
+        bottom: 30%;
+        left: -100px;
+    }
+    .scrollBarContainer,
+    .sideLink1,
+    .sideLink2 {
+        display: none;
+    }
+    .showCase {
+        padding: 150px 20px 0px 20px;
+
+        .firstSection {
+            width: 97%;
+        }
+    }
+}

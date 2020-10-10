@@ -6,6 +6,7 @@ module.exports = {
     mode: "development",
     entry: "./src/index.js",
     devtool: "inline-source-map",
+
     module: {
         rules: [
             {
@@ -24,6 +25,15 @@ module.exports = {
                     "sass-loader",
                 ],
             },
+
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                loader: "file-loader",
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: "file-loader",
+            },
         ],
     },
     plugins: [
@@ -34,10 +44,12 @@ module.exports = {
         }),
     ],
     devServer: {
-        contentBase: path.join(__dirname, "dist"),
+        contentBase: path.join(__dirname, "src"),
+        historyApiFallback: true,
     },
 
     output: {
-        path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
     },
+    resolve: {},
 };

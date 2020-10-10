@@ -1,0 +1,50 @@
+.logoImg {
+    width: 30px;
+    height: 30px;
+    background-image: url("../assets/img/logo.png");
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 10%;
+    left: 33%;
+}
+.sideBar {
+    // background-color: rgba(18, 18, 23, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    width: 90px;
+    z-index: 2000000000;
+}
+.scrollBarContainer {
+    background-color: rgba(210, 210, 255, 0.06);
+    position: absolute;
+    height: 50vh;
+    width: 2px;
+    left: 50%;
+    top: 200px;
+}
+.scrollBar {
+    height: 0;
+    background-color: white;
+    width: inherit;
+}
+.sideLink1 {
+    font-family: "3rdpartyBold";
+    position: absolute;
+    bottom: 10%;
+    transform: rotate(-90deg);
+    left: 20%;
+    color: #a3a3a6;
+}
+
+.sideLink2 {
+    font-family: "3rdpartyBold";
+    transform: rotate(-90deg);
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+    color: #a3a3a6;
+}

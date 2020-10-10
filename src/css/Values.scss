@@ -1,0 +1,259 @@
+@import "./style.scss";
+
+#values {
+    background-color: #121217;
+}
+#navBar {
+    background-color: transparent !important ;
+}
+.secondPage {
+    background-color: #121217 !important;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 44%;
+        height: 100vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        img {
+            width: 100%;
+        }
+    }
+    .content {
+        margin: 0 auto;
+        width: 100%;
+        &:before {
+            content: "";
+            float: left;
+            padding-top: 100%; /* initial ratio of 1:1*/
+        }
+        .image {
+            background-color: #121217;
+            overflow: hidden;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+        img {
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(70%);
+            position: absolute;
+            background-color: #121217;
+            z-index: 20;
+            height: 100%;
+            width: 120%;
+        }
+        .firstImage {
+            width: 100% !important;
+            object-fit: fill !important;
+            object-position: center !important;
+            filter: none !important;
+        }
+    }
+
+    .picture {
+        background-color: #121217;
+        // min-height: 900px;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas: ". pictureTitle valueDescription";
+        width: 100%;
+
+        .pictureTitle {
+            grid-area: pictureTitle;
+            width: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-weight: 200;
+            font-family: "3rdPartyBold";
+            font-size: 5em;
+            z-index: 500;
+            text-align: center;
+
+            h4 {
+                font-size: 90%;
+                font-family: nice;
+                font-weight: 200 !important ;
+                margin: 0;
+            }
+            h1 {
+                &:nth-child(2) {
+                    font-family: nice;
+                    font-weight: 50;
+                }
+                font-weight: 100;
+
+                margin: 0;
+            }
+        }
+        .valueDescription {
+            grid-area: valueDescription;
+            font-family: "3rdparty";
+            // text-transform: uppercase;
+            line-height: 1.5em;
+            font-size: 1.1em;
+            z-index: 50000;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            font-family: "3rdparty" !important;
+        }
+    }
+    .audioVisual {
+        h1:nth-child(2) {
+            font-size: 80%;
+        }
+    }
+    .emptyPicture {
+        background-color: transparent !important;
+        position: relative;
+        h5 {
+            font-size: 1.1em;
+            font-family: "3rdparty";
+            position: absolute;
+            left: 7%;
+            top: 9%;
+        }
+        .indicate {
+            $ani-speed: 2s;
+            $ani-delay: 1s;
+            position: relative;
+            .arrow {
+                opacity: 0;
+                position: absolute;
+                left: 50%;
+                top: 20%;
+                transform-origin: 50% 50%;
+                transform: translate3d(-50%, -50%, 0);
+            }
+
+            .arrow-first {
+                animation: arrow-movement $ani-speed ease-in-out infinite;
+            }
+            .arrow-second {
+                animation: arrow-movement $ani-speed $ani-delay ease-in-out
+                    infinite;
+            }
+
+            .arrow:before,
+            .arrow:after {
+                background: #fff;
+                content: "";
+                display: block;
+                height: 2px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 15px;
+            }
+
+            .arrow:before {
+                transform: rotate(45deg) translateX(-23%);
+                transform-origin: top left;
+            }
+
+            .arrow:after {
+                transform: rotate(-45deg) translateX(23%);
+                transform-origin: top right;
+            }
+
+            // Animation
+            @keyframes arrow-movement {
+                0% {
+                    opacity: 0;
+                    top: 17%;
+                }
+                70% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px) {
+    .pictureTitle {
+        font-size: 4em !important ;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    #values {
+        .wrapper {
+            left: 0 !important ;
+            right: initial !important ;
+            width: 60% !important ;
+        }
+        #ourValues {
+            font-size: 4em !important;
+        }
+    }
+
+    .picture {
+        grid-template-columns: 2fr 1fr !important;
+        grid-template-areas: "pictureTitle valueDescription" !important;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .pictureTitle {
+        font-size: 2em !important;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    // #values {
+    //     .wrapper {
+    //         width: 100% !important ;
+    //     }
+    //     #ourValues {
+    //         font-size: 2.5em !important;
+    //     }
+    // }
+    .picture {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr 1fr !important;
+        grid-template-areas:
+            "pictureTitle"
+            "valueDescription" !important;
+        .pictureTitle {
+            height: 70vh;
+        }
+        .valueDescription {
+            margin: 15px;
+            height: 30vh;
+        }
+    }
+    #values {
+        .wrapper {
+            width: 100% !important ;
+            height: 60vh;
+        }
+        #ourValues {
+            font-size: 1.8em !important;
+        }
+        .picture {
+            .pictureTitle {
+                height: 60vh;
+            }
+            .valueDescription {
+                height: 40vh;
+            }
+        }
+    }
+}

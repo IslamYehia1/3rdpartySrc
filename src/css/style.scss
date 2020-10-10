@@ -1,17 +1,124 @@
-@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+::-webkit-scrollbar {
+    display: none;
+}
+@font-face {
+    font-family: "3rdparty";
+    src: url("../assets/Helvetica.ttf");
+}
+@font-face {
+    font-family: "3rdpartyBold";
+    src: url("../assets/NHassBold.ttf");
+}
+@font-face {
+    font-family: "nice";
+    src: url("../assets/Glamor-Regular.otf");
+}
+@font-face {
+    font-family: "niceBold";
+    src: url("../assets/Glamor-Regular.otf");
+}
+$minWidth: 350px;
 body,
 html {
+    max-width: 100vw;
     margin: 0;
     padding: 0;
+    min-width: $minWidth;
 }
-canvas {
-    pointer-events: auto;
-    background-color: black;
-    z-index: -1 !important;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+body {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    min-width: $minWidth;
 }
 #root {
-    z-index: 2;
+    max-width: 100vw !important ;
+    min-width: $minWidth;
+    overflow: hidden !important;
+}
+canvas {
+    pointer-events: auto !important;
+    background-color: #121217;
+    z-index: -1 !important;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#firstPage {
+    height: 100vh;
+    // min-height: 1000px;
+}
+#secondPage {
+    padding-top: 2%;
+}
+
+.secondPage {
+    color: white;
+    height: 100%;
+}
+
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+
+.c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100%;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+.c-scrollbar:hover {
+    transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+    opacity: 1;
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
 }

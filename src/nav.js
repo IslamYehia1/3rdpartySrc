@@ -1,4 +1,7 @@
 import React from "react";
+import { Router, Link } from "@reach/router";
+import "./css/navBar.scss";
+import ContactUs from "./contactUs";
 
 export default class Nav extends React.Component {
     constructor(props) {
@@ -10,10 +13,11 @@ export default class Nav extends React.Component {
     }
     render() {
         return (
-            <nav>
-                <div id="navBar">
-                    <div className="third">
-                        <svg
+            <div>
+                <nav>
+                    <div id="navBar">
+                        <div className="third">
+                            {/* <svg
                             onClick={() =>
                                 this.state.toggle
                                     ? this.setState({ toggle: false })
@@ -40,20 +44,24 @@ export default class Nav extends React.Component {
                                 className="line bottom"
                                 d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
                             />
-                        </svg>
-                        <button className="btn btn-left">About</button>
-                        <button className="btn btn-left">Projects</button>
-                        <button className="btn btn-left">Contact</button>
+                        </svg> */}
+                            <Link to="values" className="btn">
+                                About
+                            </Link>
+                        </div>
+                        <div className="third">
+                            <Link to="/">
+                                <h2 id="logo">3RD PARTY</h2>
+                            </Link>
+                        </div>
+                        <div className="third">
+                            <Link to="contactus" className="btn btn-right">
+                                Contact Us
+                            </Link>
+                        </div>
                     </div>
-                    <div className="third">
-                        <h2 id="logo">3RD PARTY</h2>
-                    </div>
-                    <div className="third">
-                        <button className="btn btn-right">Contact</button>
-                        <button className="btn btn-right">Contact</button>
-                    </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
         );
     }
 }

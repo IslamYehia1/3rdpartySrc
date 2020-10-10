@@ -1,0 +1,111 @@
+#navBar {
+    pointer-events: auto;
+    font-family: "3rdpartyBold", sans-serif;
+    padding: 0 135px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    z-index: 200;
+    .third {
+        width: calc(100% / 3);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        &:nth-of-type(1) {
+            justify-content: flex-start;
+        }
+        &:nth-of-type(2) {
+            align-items: center;
+            justify-content: center;
+        }
+        &:nth-of-type(3) {
+            justify-content: flex-end;
+        }
+    }
+
+    #logo {
+        text-decoration: none;
+        font-size: 1.2em;
+        color: white;
+        margin: 0;
+    }
+    .third {
+        a {
+            text-decoration: none;
+        }
+    }
+    padding-top: 31px;
+    height: 90px;
+    width: 100%;
+    display: flex;
+    background-color: #121217;
+}
+
+.btn {
+    margin-top: 0;
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 45px;
+    letter-spacing: 0;
+    max-width: 80px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: inherit;
+    transition-property: all;
+    transition-duration: 0.6s;
+    transition-timing-function: ease;
+
+    &:after,
+    &:before {
+        backface-visibility: hidden;
+        border: 1px solid rgba(#fff, 0);
+        bottom: 0px;
+        content: " ";
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        transition: all 280ms ease-in-out;
+        width: 0;
+    }
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+        letter-spacing: 5px;
+    }
+    &:hover:after {
+        backface-visibility: hidden;
+        border-color: #b030b0;
+        transition: width 350ms ease-in-out;
+        width: 70%;
+    }
+}
+.btn-right {
+    text-align: right;
+    max-width: 160px !important;
+}
+
+@media only screen and (max-width: 450px) {
+    #navBar {
+        font-size: 0.8em !important;
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 30px;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    #navBar {
+        padding-left: 30px !important ;
+        padding-right: 30px !important ;
+    }
+}

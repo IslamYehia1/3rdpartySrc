@@ -1,0 +1,56 @@
+@import "style.scss";
+
+@media only screen and (max-width: 768px) {
+    #contactPic {
+        width: 100% !important;
+    }
+    #contactPage {
+        h1 {
+            font-size: 4em !important ;
+        }
+    }
+}
+
+#contactPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    min-height: 700px;
+    background-color: black;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    #contactInfo {
+        z-index: 2;
+        font-family: "3rdpartyBold";
+        height: calc(100% - 90);
+        color: whitesmoke;
+        h1 {
+            font-size: 6em;
+            position: absolute;
+            left: 10%;
+            top: 20%;
+        }
+        #info {
+            position: absolute;
+            left: 10.5%;
+            top: 50%;
+        }
+    }
+    #contactPic {
+        height: calc(100% - 90);
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-height: 640px;
+        width: 70%;
+        float: right;
+        background-image: url("../assets/img/contact.jpg");
+        background-size: cover;
+        z-index: 1;
+    }
+}

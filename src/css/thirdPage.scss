@@ -1,0 +1,86 @@
+#thirdPage {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    height: 130vh;
+    align-items: flex-start;
+    padding: 0 150px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 350px;
+    grid-template-areas:
+        "ourWork . . ."
+        "clientsList clientsList clientPreview clientPreview"
+        "clientsList clientsList clientPreview clientPreview"
+        "clientsList clientsList clientPreview clientPreview";
+    .clientPreview {
+        grid-area: clientPreview;
+        overflow: hidden;
+        img {
+            height: 800px;
+            width: 800px;
+            object-fit: cover;
+            display: none;
+            &:first-child {
+                display: block;
+            }
+        }
+    }
+    // Our Work heading
+    #ourWork {
+        grid-area: ourWork;
+        h1 {
+            font-size: 7em;
+            margin: 0;
+            &:first-child {
+                font-family: "3rdpartyBold";
+            }
+            &:nth-child(2) {
+                font-family: nice;
+                font-weight: 200;
+            }
+        }
+    }
+
+    // List of clients
+    .clientsList {
+        grid-area: clientsList;
+    }
+    .client {
+        max-height: 140px;
+        height: 90px;
+        margin: 20px 0;
+        position: relative;
+        overflow: hidden;
+        h2 {
+            position: absolute;
+            margin: 2px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-family: "3rdparty";
+            font-size: 5em;
+            color: transparent;
+            -webkit-text-stroke: 2px gray;
+        }
+
+        .outer {
+            height: 100%;
+            width: min-content;
+        }
+
+        .inner {
+            width: min-content;
+            overflow: hidden;
+            height: 0%;
+            color: blue;
+            transition: all 500ms;
+        }
+
+        &:hover {
+            .inner {
+                height: 100%;
+            }
+        }
+    }
+}
