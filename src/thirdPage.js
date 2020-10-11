@@ -72,15 +72,15 @@ export default class ThirdPage extends React.Component {
                                 >
                                     {this.images[index].map((image, index) => {
                                         return (
-                                            <div
+                                            <img
                                             key = {index}
                                                 className="pic"
-                                                style={{
-                                                    backgroundImage: image
-                                                        ? `url(./assets/img/clients/${image})`
-                                                        : "none",
-                                                }}
-                                            ></div>
+                                                src={
+                                                     image
+                                                        ? import(`./assets/img/clients/${image}`)
+                                                        : "none"
+                                                }
+                                            ></img>
                                         );
                                     })}
                                 </div>
