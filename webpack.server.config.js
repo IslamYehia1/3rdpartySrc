@@ -21,8 +21,10 @@ module.exports = {
                     "style-loader",
                     // Translates CSS into CommonJS
                     "css-loader",
+                    // Resolves the URLs inside scass files 
+                    'resolve-url-loader' , 
                     // Compiles Sass to CSS
-                    "sass-loader",
+                    "sass-loader"
                 ],
             },
 
@@ -53,3 +55,4 @@ module.exports = {
     },
     resolve: {},
 };
+

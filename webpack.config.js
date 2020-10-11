@@ -1,6 +1,8 @@
+const webpack = require("webpack")
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin") ; 
 
 module.exports = {
     mode: "production",
@@ -16,9 +18,11 @@ module.exports = {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
-                    "style-loader",
+                    MiniCssExtractPlugin.loader,
                     // Translates CSS into CommonJS
                     "css-loader",
+                    // Resolves the URLs inside scass files 
+                    'resolve-url-loader' , 
                     // Compiles Sass to CSS
                     "sass-loader",
                 ],
@@ -46,8 +50,12 @@ module.exports = {
             title: "3rd party",
             template: path.join(__dirname, "src/index.html"),
         }),
+        new webpack.ProgressPlugin(),
+        new MiniCssExtractPlugin() , 
     ],
     output: {
         path: path.resolve(__dirname, "dist"),
+        filename : "[chunkhash].js"
     },
 };
+

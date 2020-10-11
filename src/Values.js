@@ -2,7 +2,10 @@ import React from "react";
 import style from "./css/Values.scss";
 import { TimelineMax, TweenLite, TweenMax, gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import motion from "./assets/img/motion.png" ;
+import uxui from "./assets/img/uxui.png" ; 
+import backend from "./assets/img/backend.png"
+import valuesCover from "./assets/img/landing.svg"
 export default class Values extends React.Component {
     constructor(props) {
         super(props);
@@ -60,18 +63,18 @@ export default class Values extends React.Component {
                                 ref={(div) => (this.firstClient = div)}
                                 className="image firstClient"
                             >
-                                <img src="./assets/img/motion.png" alt="" />
+                                <img src={motion} alt="" />
                             </div>
                             <div className="image secondClient">
-                                <img src="./assets/img/uxui.png" alt="" />
+                                <img src={uxui} alt="" />
                             </div>
                             <div className="image">
-                                <img src="./assets/img/backend.png" alt="" />
+                                <img src={backend} alt="" />
                             </div>
                             <div className="image">
                                 <img
                                     className="firstImage"
-                                    src="./assets/img/landing.svg"
+                                    src={valuesCover}
                                     alt=""
                                 />
                             </div>
