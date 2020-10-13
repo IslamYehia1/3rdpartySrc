@@ -23,7 +23,7 @@ export default class HomePage extends React.Component {
                         <p className="description">
                             {" "}
                             3RD Party is a multi-disciplinary full service
-                            marketing agency that designs cohesive solutions to
+                            marketing agency in Cairo, Egypt that designs cohesive solutions to
                             deliver thoughtful work. Our work encompasses
                             graphics, websites and digital experiences, sound
                             and motion, advertising and communication.
