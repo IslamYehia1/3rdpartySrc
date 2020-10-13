@@ -1,23 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Link , globalHistory } from "@reach/router";
-import path from "path";
 import loadBackground from "./background.js";
+import SideBar from "./sideBar";
 import Home from "./home";
-import SecondPage from "./Values";
+import Values from "./values";
 import ContactUs from "./contactUs";
 import LocomotiveScroll from "locomotive-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import ScrollIndicator from "./scrollIndicator";
-
+import "./hideLoadingPage"  ; 
 class App extends React.Component {
     constructor(props) {
         super(props);
+        // Initializing the momentum scrolling effect
+        // then passing the locoScroll instance to other components 
+        // to refresh the locoscroll instance whenever needed
         gsap.registerPlugin(ScrollTrigger);
-        this.container = document.getElementById("root");
+        this.root = document.getElementById("root");
         this.locoScroll = new LocomotiveScroll({
-            el: this.container,
+            el: this.root,
             smooth: true,
             smoothMobile: true,
         });
@@ -25,14 +27,14 @@ class App extends React.Component {
         this.locoScroll.on("scroll", (params) => {
             ScrollTrigger.update(params);
         });
-        const locoScroll = this.locoScroll;
 
+        const locoScroll = this.locoScroll;
         ScrollTrigger.scrollerProxy(document.querySelector("#root"), {
             scrollTop(value) {
                 return arguments.length
                     ? locoScroll.scrollTo(value, 0, 0)
                     : locoScroll.scroll.instance.scroll.y;
-            }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+            }, 
             getBoundingClientRect() {
                 return {
                     top: 0,
@@ -48,61 +50,25 @@ class App extends React.Component {
         });
     }
     componentDidMount() {
-
         loadBackground();
-        const locoScroll = this.locoScroll;
-        ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+        ScrollTrigger.addEventListener("refresh", () => this.locoScroll.update());
         // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
         ScrollTrigger.refresh();
     }
-    componentWillUnmount(){
-        // this.locoScroll.distroy();
-    }
+
     render() {
         return (
             <div id="container">
-                <ScrollIndicator />
-                <Router onChange = {()=> document.querySelector(".landing").landing.style.display = "block"}>
+                <SideBar />
+                <Router>
                     <Home path="/" default locoScroll = {this.locoScroll} />
-                    <ContactUs path="contactus" />
-                    <SecondPage  path="values" locoScroll = {this.locoScroll} />
+                    <ContactUs path="contactus" locoScroll = {this.locoScroll} />
+                    <Values  path="values" locoScroll = {this.locoScroll} />
                 </Router>
             </div>
         );
     }
 }
 
-var root = document.getElementById("root");
+const root = document.getElementById("root");
 ReactDOM.render(<App />, root);
-
-window.onload = function hideLoader () {
-    var landing = document.querySelector(".landing");
-    var fadingAway = gsap.to(landing, { y: -100, opacity: 0, duration: 2 });
-    landing.style.display = "none" ; 
-    landing.style.opacity = "1" ; 
-    let content = document.querySelectorAll(".title");
-    gsap.from(content[0], {
-        rotation: "30",
-        transformOrigin: "0 0 ",
-        duration: 1,
-        ease: "power2",
-    });
-    gsap.from(content[1], {
-        rotation: "30",
-        transformOrigin: "0 0 ",
-        duration: 1,
-        ease: "power2",
-    });
-    gsap.from(content[2], {
-        rotation: "30",
-        transformOrigin: "0 0 ",
-        duration: 1,
-        ease: "power2",
-    });
-    gsap.from(document.querySelector(".description"), {
-        rotation: "30",
-        transformOrigin: "0 0 ",
-        duration: 1,
-        ease: "power2".easeOut,
-    });
-};

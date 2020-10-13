@@ -61,7 +61,6 @@
 
     .picture {
         background-color: #121217;
-        // min-height: 900px;
         height: 100vh;
         display: grid;
         grid-template-columns: 1fr 2fr 1fr;
@@ -217,14 +216,6 @@
 }
 
 @media only screen and (max-width: 450px) {
-    // #values {
-    //     .wrapper {
-    //         width: 100% !important ;
-    //     }
-    //     #ourValues {
-    //         font-size: 2.5em !important;
-    //     }
-    // }
     .picture {
         grid-template-columns: 1fr !important;
         grid-template-rows: 1fr 1fr !important;

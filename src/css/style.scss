@@ -3,19 +3,23 @@
 }
 @font-face {
     font-family: "3rdparty";
-    src: url("../assets/Helvetica.ttf");
+    src: url("../assets/NHass.ttf");
+    font-display: swap;
 }
 @font-face {
     font-family: "3rdpartyBold";
     src: url("../assets/NHassBold.ttf");
+    font-display: swap;
 }
 @font-face {
     font-family: "nice";
     src: url("../assets/Glamor-Regular.otf");
+    font-display: swap;
 }
 @font-face {
     font-family: "niceBold";
     src: url("../assets/Glamor-Regular.otf");
+    font-display: swap;
 }
 $minWidth: 350px;
 body,

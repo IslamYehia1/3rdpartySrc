@@ -2,9 +2,9 @@ import React from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Router, Link , globalHistory } from "@reach/router";
 
-import "./css/scrollIndicator.scss";
+import "./css/sideBar.scss";
 
-export default class ScrollIndicator extends React.Component {
+export default class SideBar extends React.Component {
     constructor(props) {
         super(props);
         this.loc ; 
@@ -40,8 +40,8 @@ export default class ScrollIndicator extends React.Component {
         return (
             
             <div className="sideBar" ref={(div) => (this.sideBar = div)}>
-                <Link to="/">
-                    <div className="logoImg"></div>
+                <Link to="/" className="logoImg">
+                    3RD PARTY
                 </Link>
 
                 <div
@@ -56,8 +56,9 @@ export default class ScrollIndicator extends React.Component {
                 <Link to="values">
                     <div className ="sideLink1">About</div>
                 </Link>
-                
-                <div className="sideLink2">Our Work</div>
+                <Link to="/">
+                    <div className="sideLink2">Home</div>
+                </Link>
             </div>
         );
     }

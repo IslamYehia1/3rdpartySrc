@@ -1,9 +1,9 @@
 import React from "react";
 import { Router, Link } from "@reach/router";
-import "./css/firstPage.scss";
+import "./css/homePage.scss";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default class Content extends React.Component {
+export default class HomePage extends React.Component {
     componentDidMount() {}
     render() {
         return (
@@ -30,7 +30,7 @@ export default class Content extends React.Component {
                         </p>
                     </div>
                     <Link to="values" className="seeMore">
-                        LEARN MORE
+                        KNOW MORE
                     </Link>
                 </div>
             </section>

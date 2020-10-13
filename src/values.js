@@ -1,11 +1,8 @@
 import React from "react";
-import style from "./css/Values.scss";
+import style from "./css/values.scss";
 import { TimelineMax, TweenLite, TweenMax, gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import motion from "./assets/img/motion.png" ;
-import uxui from "./assets/img/uxui.png" ; 
-import backend from "./assets/img/backend.png"
-import valuesCover from "./assets/img/landing.svg"
+
 export default class Values extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +11,7 @@ export default class Values extends React.Component {
     }
 
     componentDidMount(props) {
+        
         gsap.registerPlugin(ScrollTrigger);
         this.locoScroll.update() ; 
         var hideOverflow = () => {
@@ -63,18 +61,18 @@ export default class Values extends React.Component {
                                 ref={(div) => (this.firstClient = div)}
                                 className="image firstClient"
                             >
-                                <img src={motion} alt="" />
+                                <img src={require("./assets/img/motion.png").default} alt="" />
                             </div>
                             <div className="image secondClient">
-                                <img src={uxui} alt="" />
+                                <img src={require("./assets/img/uxui.png").default} alt="" />
                             </div>
                             <div className="image">
-                                <img src={backend} alt="" />
+                                <img src={require("./assets/img/backend.png").default} alt="" />
                             </div>
                             <div className="image">
                                 <img
                                     className="firstImage"
-                                    src={valuesCover}
+                                    src={require("./assets/img/landing.svg").default}
                                     alt=""
                                 />
                             </div>

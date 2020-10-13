@@ -2,6 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./css/contactUs.scss";
 export default class ContactUs extends React.Component {
+    constructor(props){
+        super(props) ; 
+        this.locoScroll = props.locoScroll ; 
+    }
+    componentDidMount(){
+        this.locoScroll.update() ; 
+    }
     render() {
         return (
             <div id="contactPage">

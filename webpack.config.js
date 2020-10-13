@@ -15,6 +15,10 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.html$/i,
+                use : ['html-loader'],
+            },
+            {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // Creates `style` nodes from JS strings
@@ -26,6 +30,7 @@ module.exports = {
                     // Compiles Sass to CSS
                     "sass-loader",
                 ],
+
             },
 
             {
